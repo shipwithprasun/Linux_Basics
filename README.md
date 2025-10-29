@@ -63,7 +63,7 @@ Here are key commands with examples and use-cases.
 | `sort file \| uniq`        | Sort then remove duplicates (via pipe).                        | `sort items.txt \| uniq`                    |              |                 |
 | `split -l 3 file`          | Split a file into smaller files each of 3 lines.               | `split -l 3 bigfile.txt`                    |              |                 |
 | `grep "word" file`         | Search for “word” in file, print matching lines.               | `grep "ERROR" log.txt`                      |              |                 |
-| `egrep "word1              | word2" file`                                                   | Extended grep: match either word1 or word2. | `egrep "WARN | ERROR" log.txt` |
+| `egrep "word1|word2" file` |Extended grep: match either word1 or word2. 		      | `egrep "WARN | ERROR" log.txt` |
 | `ls file*`                 | Wildcard listing: all filenames that start with “file”.        | `ls file*`                                  |              |                 |
 | `touch file{1..5}`         | Create files `file1`, `file2`, `file3`, `file4`, `file5`.      | `touch file{1..5}`                          |              |                 |
 | `shuf file`                | Shuffle the lines of a file (randomize).                       | `shuf list.txt`                             |              |                 |
