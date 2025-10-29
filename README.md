@@ -45,34 +45,35 @@ Here are key commands with examples and use-cases.
 
 ### 3.2 Directory operations and moving files
 
-| Command                    | Description                                                    | Example                                     |              |                 |
-| -------------------------- | -------------------------------------------------------------- | ------------------------------------------- | ------------ | --------------- |
-| `mkdir <dir_name>`         | Create a new directory.                                        | `mkdir projects`                            |              |                 |
-| `rmdir <dir_name>`         | Remove an empty directory.                                     | `rmdir oldfolder`                           |              |                 |
-| `rm -rf <dir_name>`        | Remove directory **and its contents recursively** (dangerous). | `rm -rf backup/old`                         |              |                 |
-| `cd /path/folder`          | Change current directory to given path.                        | `cd /home/you/projects`                     |              |                 |
-| `cd ..`                    | Move up one level in directory structure.                      | `cd ..`                                     |              |                 |
-| `cp <file> /dest/path`     | Copy a file to a destination directory.                        | `cp report.txt ~/backups/`                  |              |                 |
-| `cp fileA fileB`           | Copy and rename in one step.                                   | `cp old.txt new.txt`                        |              |                 |
-| `mv <file> /dest/path`     | Move (or rename) a file to destination or new name.            | `mv draft.txt final.txt`                    |              |                 |
-| `mv fileA fileNewName`     | Rename a file.                                                 | `mv oldname.txt newname.txt`                |              |                 |
-| `head -5 file`             | View first 5 lines of a file.                                  | `head -5 access.log`                        |              |                 |
-| `tail -5 file`             | View last 5 lines of a file.                                   | `tail -5 access.log`                        |              |                 |
-| `sort file`                | Sort file lines in ascending order.                            | `sort names.txt`                            |              |                 |
-| `sort -r file`             | Sort file lines in **reverse** order.                          | `sort -r names.txt`                         |              |                 |
-| `sort file \| uniq`        | Sort then remove duplicates (via pipe).                        | `sort items.txt \| uniq`                    |              |                 |
-| `split -l 3 file`          | Split a file into smaller files each of 3 lines.               | `split -l 3 bigfile.txt`                    |              |                 |
-| `grep "word" file`         | Search for “word” in file, print matching lines.               | `grep "ERROR" log.txt`                      |              |                 |
-| `egrep "word1|word2" file` |Extended grep: match either word1 or word2. 		      | `egrep "WARN | ERROR" log.txt` |
-| `ls file*`                 | Wildcard listing: all filenames that start with “file”.        | `ls file*`                                  |              |                 |
-| `touch file{1..5}`         | Create files `file1`, `file2`, `file3`, `file4`, `file5`.      | `touch file{1..5}`                          |              |                 |
-| `shuf file`                | Shuffle the lines of a file (randomize).                       | `shuf list.txt`                             |              |                 |
-| `wc -l file`               | Count number of lines in file.                                 | `wc -l data.csv`                            |              |                 |
-| `cmp fileA fileB`          | Compare two files byte-by-byte.                                | `cmp f1.bin f2.bin`                         |              |                 |
-| `diff -u fileA fileB`      | Show unified diff (line‐based) between fileA and fileB.        | `diff -u version1.txt version2.txt`         |              |                 |
-| `find /path/ -name <file>` | Search for files by name recursively. ([Wikipedia][3])         | `find /var/log -name "*.log"`               |              |                 |
-| `updatedb`                 | Rebuild database for `locate`.                                 | `sudo updatedb`                             |              |                 |
-| `locate <file>`            | Quickly locate files using database.                           | `locate config.yaml`                        |              |                 |
+| Command                    | Description                                                    | Example                                     |
+| --------------------------- | -------------------------------------------------------------- | ------------------------------------------- |
+| `mkdir <dir_name>`          | Create a new directory.                                        | `mkdir projects`                            |
+| `rmdir <dir_name>`          | Remove an empty directory.                                     | `rmdir oldfolder`                           |
+| `rm -rf <dir_name>`         | Remove directory **and its contents recursively** (dangerous). | `rm -rf backup/old`                         |
+| `cd /path/folder`           | Change current directory to given path.                        | `cd /home/you/projects`                     |
+| `cd ..`                     | Move up one level in directory structure.                      | `cd ..`                                     |
+| `cp <file> /dest/path`      | Copy a file to a destination directory.                        | `cp report.txt ~/backups/`                  |
+| `cp fileA fileB`            | Copy and rename in one step.                                   | `cp old.txt new.txt`                        |
+| `mv <file> /dest/path`      | Move (or rename) a file to destination or new name.            | `mv draft.txt final.txt`                    |
+| `mv fileA fileNewName`      | Rename a file.                                                 | `mv oldname.txt newname.txt`                |
+| `head -5 file`              | View first 5 lines of a file.                                  | `head -5 access.log`                        |
+| `tail -5 file`              | View last 5 lines of a file.                                   | `tail -5 access.log`                        |
+| `sort file`                 | Sort file lines in ascending order.                            | `sort names.txt`                            |
+| `sort -r file`              | Sort file lines in **reverse** order.                          | `sort -r names.txt`                         |
+| `sort file \| uniq`         | Sort then remove duplicates (via pipe).                        | `sort items.txt \| uniq`                    |
+| `split -l 3 file`           | Split a file into smaller files each of 3 lines.               | `split -l 3 bigfile.txt`                    |
+| `grep "word" file`          | Search for “word” in file, print matching lines.               | `grep "ERROR" log.txt`                      |
+| `egrep "word1\|word2" file` | Extended grep: match either word1 or word2.                    | `egrep "WARN\|ERROR" log.txt`               |
+| `ls file*`                  | Wildcard listing: all filenames that start with “file”.        | `ls file*`                                  |
+| `touch file{1..5}`          | Create files `file1`, `file2`, `file3`, `file4`, `file5`.      | `touch file{1..5}`                          |
+| `shuf file`                 | Shuffle the lines of a file (randomize).                       | `shuf list.txt`                             |
+| `wc -l file`                | Count number of lines in file.                                 | `wc -l data.csv`                            |
+| `cmp fileA fileB`           | Compare two files byte-by-byte.                                | `cmp f1.bin f2.bin`                         |
+| `diff -u fileA fileB`       | Show unified diff (line-based) between fileA and fileB.        | `diff -u version1.txt version2.txt`         |
+| `find /path/ -name <file>`  | Search for files by name recursively.                          | `find /var/log -name "*.log"`               |
+| `updatedb`                  | Rebuild database for `locate`.                                 | `sudo updatedb`                             |
+| `locate <file>`             | Quickly locate files using database.                           | `locate config.yaml`                        |
+
 
 ### 3.3 Use-case examples
 
